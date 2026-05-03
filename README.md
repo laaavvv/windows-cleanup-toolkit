@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧹 Windows Cleanup Toolkit
+# Windows Cleanup Toolkit
 
 **A lightweight, all-in-one Windows cleanup utility built in Batch.**  
 No installs. No third-party tools. Just run and clean.
@@ -16,7 +16,7 @@ No installs. No third-party tools. Just run and clean.
 
 ## 📋 Overview
 
-**Windows Cleanup Toolkit** is a single `.bat` script that lets you clean your Windows system quickly through an interactive menu. It combines temporary file removal, browser cache cleanup, registry sound tweaks, Windows Event Log clearing, and the built-in Disk Cleanup tool — all in one place.
+**Windows Cleanup Toolkit** is a single `.bat` script that lets you clean your Windows system quickly through an interactive menu. It combines temporary file removal, browser cache cleanup, remove registry trash files, Windows Event Log clearing, and the built-in Disk Cleanup tool — all in one place.
 
 > ⚠️ **Must be run as Administrator.** The script checks for elevated privileges automatically and will exit if they are not granted.
 
@@ -74,7 +74,7 @@ No installs. No third-party tools. Just run and clean.
 - 🗑️ Recycle Bin
 
 ### Option 2 — Registry, Event Logs & Disk Cleanup
-- Silences system sounds via `.reg` injection (UAC, notifications, device connect/disconnect, mail beep, etc.)
+- Remove trash files from registry via `.reg` injection
 - Clears **all Windows Event Logs** via PowerShell
 - Launches `cleanmgr.exe` (Windows built-in Disk Cleanup)
 
@@ -110,6 +110,7 @@ This script makes **irreversible deletions** to temporary files, caches, and log
 windows-cleanup/
 ├── windows-cleanup-toolkit.bat   # Main script (all-in-one)
 └── README.md                     # Documentation
+└── LICENSE                       # Documentation
 ```
 
 ---
