@@ -27,7 +27,7 @@ No installs. No third-party tools. Just run and clean.
 | Option | Name | Description |
 |--------|------|-------------|
 | `[1]` | **Temp File Cleanup** | Removes temp folders, system/user caches, Windows Update leftovers, log files, and browser caches (Edge, Chrome, Firefox, Brave, Vivaldi). Also empties the Recycle Bin. |
-| `[2]` | **Registry, Event Logs & Disk Cleanup** | Silences Windows system sounds via registry, clears all Windows Event Logs using PowerShell, and launches the native `cleanmgr.exe` Disk Cleanup tool. |
+| `[2]` | **Registry, Event Logs & Disk Cleanup** | Remove registry no usefull, clears all Windows Event Logs using PowerShell, and launches the native `cleanmgr.exe` Disk Cleanup tool. |
 | `[3]` | **Full Cleanup** | Runs Option 1 + Option 2 in sequence — the complete cleanup experience. |
 | `[0]` | **Exit** | Exits the toolkit. |
 
