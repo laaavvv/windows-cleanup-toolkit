@@ -7,8 +7,13 @@ No installs. No third-party tools. Just run and clean.
 
 [![Author](https://img.shields.io/badge/author-laaavvv-blue?style=flat-square)](https://github.com/laaavvv)
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D6?style=flat-square&logo=windows)](https://github.com/laaavvv/windows-cleanup)
-[![Language](https://img.shields.io/badge/language-Batch-4D4D4D?style=flat-square&logo=windowsterminal)](https://github.com/laaavvv/windows-cleanup)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+
+<p>
+  <img src="https://img.shields.io/badge/Batch-000000?style=for-the-badge&logo=windowsterminal&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PowerShell-000000?style=for-the-badge&logo=windowsterminal&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Registry-000000?style=for-the-badge&logo=windows&logoColor=white"/>
+</p>
 
 </div>
 
