@@ -1,82 +1,128 @@
-<h1 align="center"><code>windows-cleanup-toolkit</code></h1>
-
-<p align="center">
-  A collection of scripts to clean, optimize and debloat Windows 10/11 systems.
-  Built from real IT support experience.
-</p>
-
----
-
 <div align="center">
 
-<img src="https://img.shields.io/badge/Windows_10-000000?style=for-the-badge&logo=windows10&logoColor=white"/>
-<img src="https://img.shields.io/badge/Windows_11-000000?style=for-the-badge&logo=windows11&logoColor=white"/>
-<img src="https://img.shields.io/badge/PowerShell-000000?style=for-the-badge&logo=windowsterminal&logoColor=white"/>
-<img src="https://img.shields.io/badge/Batch-000000?style=for-the-badge&logo=windowsterminal&logoColor=white"/>
+# 🧹 Windows Cleanup Toolkit
+
+**A lightweight, all-in-one Windows cleanup utility built in Batch.**  
+No installs. No third-party tools. Just run and clean.
+
+[![Author](https://img.shields.io/badge/author-laaavvv-blue?style=flat-square)](https://github.com/laaavvv)
+[![Platform](https://img.shields.io/badge/platform-Windows-0078D6?style=flat-square&logo=windows)](https://github.com/laaavvv/windows-cleanup)
+[![Language](https://img.shields.io/badge/language-Batch-4D4D4D?style=flat-square&logo=windowsterminal)](https://github.com/laaavvv/windows-cleanup)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
 </div>
 
 ---
 
-## 📁 Files
+## 📋 Overview
 
-| File | Description |
-|------|-------------|
-| `_Clean_Temp_Files.bat` | Cleans Windows Temp, AppData Temp, Update cache and Recycle Bin |
-| `Limpeza.bat` | Deep clean — browser caches (Edge, Chrome, Firefox, Brave, Vivaldi) + system logs |
-| `_Clear_EventLogs.ps1` | Clears all Windows Event Viewer logs |
-| `_PrivacySexy_Cleanup.bat` | Privacy-focused cleanup — removes tracking data, shadow copies, credentials and more |
-| `_remove_registry_shit.reg` | Registry cleaner — removes junk entries |
-| `shortcuts/` | Quick-access shortcuts to common temp folders |
+**Windows Cleanup Toolkit** is a single `.bat` script that lets you clean your Windows system quickly through an interactive menu. It combines temporary file removal, browser cache cleanup, registry sound tweaks, Windows Event Log clearing, and the built-in Disk Cleanup tool — all in one place.
+
+> ⚠️ **Must be run as Administrator.** The script checks for elevated privileges automatically and will exit if they are not granted.
 
 ---
 
-## ⚠️ Requirements
+## 🚀 Features
 
-- **Run as Administrator** — most scripts require elevated privileges
-- Windows 10 / 11
-- PowerShell execution policy: `Unrestricted` (for `.ps1` scripts)
-
-To allow `.ps1` execution, run this once in PowerShell as admin:
-```powershell
-Set-ExecutionPolicy Unrestricted -Scope CurrentUser
-```
+| Option | Name | Description |
+|--------|------|-------------|
+| `[1]` | **Temp File Cleanup** | Removes temp folders, system/user caches, Windows Update leftovers, log files, and browser caches (Edge, Chrome, Firefox, Brave, Vivaldi). Also empties the Recycle Bin. |
+| `[2]` | **Registry, Event Logs & Disk Cleanup** | Silences Windows system sounds via registry, clears all Windows Event Logs using PowerShell, and launches the native `cleanmgr.exe` Disk Cleanup tool. |
+| `[3]` | **Full Cleanup** | Runs Option 1 + Option 2 in sequence — the complete cleanup experience. |
+| `[0]` | **Exit** | Exits the toolkit. |
 
 ---
 
-## 🚀 Usage
+## 🖥️ Preview
 
-**1. Temp file cleanup (fast):**
 ```
-Right click _Clean_Temp_Files.bat → Run as administrator
-```
+  ====================================================
+    Windows Cleanup Toolkit  |  by laaavvv
+    github.com/laaavvv
+  ====================================================
 
-**2. Deep browser + system cleanup:**
-```
-Right click Limpeza.bat → Run as administrator
-```
+    [1]  Temp File Cleanup
+         Removes temporary files, browser cache, logs and junk from the system.
 
-**3. Clear Event Logs:**
-```powershell
-# Run in PowerShell as admin
-.\Clear_EventLogs.ps1
-```
+    [2]  Registry, Event Logs & Disk Cleanup
+         Remove registry trash, clears Windows Event Logs and launches
+         the built-in Disk Cleanup tool (cleanmgr)
 
-**4. Privacy cleanup:**
-```
-Right click _PrivacySexy_Cleanup.bat → Run as administrator
+    [3]  Full Cleanup  (Option 1 + Option 2)
+         Runs both cleanups in sequence.
+
+    [0]  Exit
+
+  ====================================================
+  Select an option [0-3]:
 ```
 
 ---
 
-## 📌 Notes
+## 📦 What Gets Cleaned
 
-- `Limpeza.bat` will kill browser processes before cleaning — save your work first
-- `_PrivacySexy_Cleanup.bat` removes shadow copies — this cannot be undone
-- The `.reg` file modifies the Windows Registry — create a restore point before running
+### Option 1 — Temp File Cleanup
+- `C:\Windows\SystemTemp`
+- `C:\Users\%USERNAME%\AppData\Local\Temp`
+- `C:\Windows\Temp`
+- Windows CBS, MoSetup, Panther, inf, SoftwareDistribution and .NET log files
+- Windows Update download cache (`SoftwareDistribution\Download`)
+- Internet Explorer / INetCache
+- Browser caches for: **Edge**, **Chrome**, **Firefox**, **Brave**, **Vivaldi**
+  - Covers: Cache, Service Worker (Database, CacheStorage, ScriptCache), GPUCache, ShaderCache, Storage/ext
+  - Supports Default profile + Profile 1 + Profile 2
+- 🗑️ Recycle Bin
+
+### Option 2 — Registry, Event Logs & Disk Cleanup
+- Silences system sounds via `.reg` injection (UAC, notifications, device connect/disconnect, mail beep, etc.)
+- Clears **all Windows Event Logs** via PowerShell
+- Launches `cleanmgr.exe` (Windows built-in Disk Cleanup)
+
+### Option 3 — Full Cleanup
+Everything from Option 1 + Option 2 in a single run.
 
 ---
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=laaavvv&color=58a6ff&style=flat-square&label=Profile+Views"/>
-</p>
+## ⚙️ How to Use
+
+1. **Download** `windows-cleanup-toolkit.bat` from this repository.
+2. **Right-click** the file and select **"Run as administrator"**.
+3. **Select** one of the menu options (`1`, `2`, or `3`).
+4. After the cleanup finishes, choose to **return to the menu** or **exit**.
+
+> 💡 Tip: Use Option 3 for a full deep-clean session. Use Option 1 periodically for light maintenance.
+
+---
+
+## ⚠️ Disclaimer
+
+This script makes **irreversible deletions** to temporary files, caches, and logs. It does **not** touch personal files, documents, or installed applications. Use it at your own discretion.
+
+- Tested on **Windows 10** and **Windows 11**
+- Some paths may not exist on your system — all errors are suppressed silently (`>NUL 2>&1`)
+- Browsers must be **closed** before running for full cache deletion to take effect
+
+---
+
+## 📁 Repository Structure
+
+```
+windows-cleanup/
+├── windows-cleanup-toolkit.bat   # Main script (all-in-one)
+└── README.md                     # Documentation
+```
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).  
+Free to use, modify, and distribute.
+
+---
+
+<div align="center">
+
+Made with 🖤 by [laaavvv](https://github.com/laaavvv)
+
+</div>
