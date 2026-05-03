@@ -109,8 +109,8 @@ This script makes **irreversible deletions** to temporary files, caches, and log
 ```
 windows-cleanup/
 ├── windows-cleanup-toolkit.bat   # Main script (all-in-one)
-└── README.md                     # Documentation
-└── LICENSE                       # Documentation
+├── README.md                     # Documentation
+└── LICENSE                       # MIT License
 ```
 
 ---
