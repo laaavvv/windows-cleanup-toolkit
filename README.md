@@ -125,10 +125,4 @@ windows-cleanup/
 This project is licensed under the [MIT License](LICENSE).  
 Free to use, modify, and distribute.
 
----
-
-<div align="center">
-
-Made with 🖤 by [laaavvv](https://github.com/laaavvv)
-
 </div>
