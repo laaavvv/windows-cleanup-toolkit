@@ -67,15 +67,23 @@ No installs. No third-party tools. Just run and clean.
 ## 📦 What Gets Cleaned
 
 ### Option 1 — Temp File Cleanup
-- `C:\Windows\SystemTemp`
-- `C:\Users\%USERNAME%\AppData\Local\Temp`
-- `C:\Windows\Temp`
-- Windows CBS, MoSetup, Panther, inf, SoftwareDistribution and .NET log files
-- Windows Update download cache (`SoftwareDistribution\Download`)
-- Internet Explorer / INetCache
+- `C:\Windows\SystemTemp`, `C:\Windows\Temp`, `C:\Users\%USERNAME%\AppData\Local\Temp`
+- Windows CBS, MoSetup, Panther, inf, SoftwareDistribution, .NET, DISM log files
+- Windows Update download cache (`SoftwareDistribution\Download` and `DataStore`)
+- Internet Explorer / INetCache, Font Cache, Thumbnail Cache
+- Prefetch, Minidump, Memory dumps, Crash dumps
+- Windows Error Reporting, Delivery Optimization cache
+- DirectX Shader Cache (D3DSCache), NVIDIA, AMD and Intel GPU caches
+- Java deployment cache, Office 16.0 FileCache
 - Browser caches for: **Edge**, **Chrome**, **Firefox**, **Brave**, **Vivaldi**
   - Covers: Cache, Service Worker (Database, CacheStorage, ScriptCache), GPUCache, ShaderCache, Storage/ext
   - Supports Default profile + Profile 1 + Profile 2
+- App caches: **Discord**, **Teams**, **Spotify**, **Steam**, **Epic Games Launcher**
+- Visual Studio Code logs and CachedData
+- Windows Store / UWP `TempState` cache
+- Recent files list
+- Windows Defender scan history and support logs
+- DNS cache flush (`ipconfig /flushdns`)
 - 🗑️ Recycle Bin
 
 ### Option 2 — Registry, Event Logs & Disk Cleanup
@@ -93,7 +101,7 @@ Everything from Option 1 + Option 2 in a single run.
 1. **Download** `windows-cleanup-toolkit.bat` from this repository.
 2. **Right-click** the file and select **"Run as administrator"**.
 3. **Select** one of the menu options (`1`, `2`, or `3`).
-4. After the cleanup finishes, choose to **return to the menu** or **exit**.
+4. The script runs automatically and closes when finished.
 
 > 💡 Tip: Use Option 3 for a full deep-clean session. Use Option 1 periodically for light maintenance.
 
@@ -105,7 +113,7 @@ This script makes **irreversible deletions** to temporary files, caches, and log
 
 - Tested on **Windows 10** and **Windows 11**
 - Some paths may not exist on your system — all errors are suppressed silently (`>NUL 2>&1`)
-- Browsers must be **closed** before running for full cache deletion to take effect
+- Browsers and apps must be **closed** before running for full cache deletion to take effect
 
 ---
 
