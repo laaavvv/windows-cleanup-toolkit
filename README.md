@@ -41,24 +41,22 @@ No installs. No third-party tools. Just run and clean.
 ## 🖥️ Preview
 
 ```
-  ====================================================
-    Windows Cleanup Toolkit  |  by laaavvv
-    github.com/laaavvv
-  ====================================================
+  ====================================================================================================================
+    Windows Cleanup Toolkit  |  by laaavvv, github.com/laaavvv  
+  ====================================================================================================================
 
     [1]  Temp File Cleanup
          Removes temporary files, browser cache, logs and junk from the system.
 
     [2]  Registry, Event Logs & Disk Cleanup
-         Remove registry trash, clears Windows Event Logs and launches
-         the built-in Disk Cleanup tool (cleanmgr)
+         Clears registry trash, Event Logs and launches Disk Cleanup (cleanmgr). 
 
     [3]  Full Cleanup  (Option 1 + Option 2)
          Runs both cleanups in sequence.
 
     [0]  Exit
 
-  ====================================================
+  ====================================================================================================================
   Select an option [0-3]:
 ```
 
